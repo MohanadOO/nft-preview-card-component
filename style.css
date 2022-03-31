@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+  --primary-soft-blue: hsl(215, 51%, 70%);
+  --primary-cyan: hsl(178, 100%, 50%);
+  --neutral-dark-blue-main: hsl(217, 54%, 11%);
+  --neutral-dark-blue-card: hsl(216, 50%, 16%);
+  --neutral-dark-blue-line: hsl(215, 32%, 27%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--neutral-dark-blue-main);
+  font-family: 'Outfit', sans-serif;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  line-height: 1.5;
+}
+
+hr {
+  border-color: var(--neutral-dark-blue-line);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  color: var(--primary-soft-blue);
+}
+
+.card-container {
+  max-width: 300px;
+  background-color: var(--neutral-dark-blue-card);
+  box-shadow: 0px 0px 20px black;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+}
+
+.card-image-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.card-image-view {
+  position: absolute;
+  top: 132px;
+  right: 120px;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.card-image-container:hover > .card-image-view {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.card-image-container:hover > .image-hover {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  background-color: hsl(178, 100%, 50%, 0.3);
+  transition: background 0.4s ease-in-out;
+}
+
+.image-hover {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  background-color: hsl(178, 100%, 50%, 0);
+  transition: background 0.4s ease-in-out;
+}
+
+.card-image {
+  max-width: 300px;
+  border-radius: 20px;
+  transition: opacity 5.2s ease-in-out;
+}
+
+.price-details,
+.author-section,
+.eth-value,
+.price-period {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.price-details {
+  justify-content: space-between;
+}
+
+.eth-value {
+  color: var(--primary-cyan);
+  font-weight: 700;
+}
+
+.price-period {
+  color: var(--primary-soft-blue);
+}
+
+.author-section {
+  gap: 20px;
+}
+
+.author-avatar {
+  max-width: 40px;
+  border: 1px solid white;
+  border-radius: 100%;
+}
+
+.author-name {
+  color: white;
+}
+
+.card-name,
+.author-name {
+  cursor: pointer;
+}
+
+.card-name:hover,
+.author-name:hover {
+  color: var(--primary-cyan);
+  transition: color 0.4s ease-in-out;
+}
